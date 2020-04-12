@@ -19,6 +19,10 @@ BUCKET_NAME = 'foot-scanning-api'
 UPLOAD_FOLDER = 'data'
 TMP_DIR = '/tmp/'
 
+@app.route('/', methods=['GET'])
+def home():
+    return "<h1>Welcome to API</h1>"
+
 @app.route('/upload', methods=['POST'])
 def upload():
     if request.method == "POST":
