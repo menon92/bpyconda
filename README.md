@@ -12,7 +12,10 @@ Convert any 3D `.obj` file to `.stl`
 ## How to configure bpyconda
 
 ### Step 1: Install miniconda
-Goto [conda website](https://docs.conda.io/en/latest/miniconda.html#id3) and download miniconda for `Python 3.7` and `Miniconda Linux 64-bit` for 64 bit ubuntu.
+Goto [conda website](https://docs.conda.io/en/latest/miniconda.html#id3) and download miniconda for `Python 3.7` and `Miniconda Linux 64-bit` for 64 bit ubuntu. To install miniconda run
+```bash
+bash Miniconda3-latest-Linux-x86_64.sh
+```
 
 ### Step 2: Install libpng12
 After `Ubunut 16.04` libpng12 package is update to `libpng16`. For `python-blender` we need libpng12 . To install libpng12 please follow bellow instructions.
