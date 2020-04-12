@@ -68,7 +68,7 @@ def lambda_handler(event, context):
     try:
         # obj=s3.Bucket(BUCKET_NAME).download_file(KEY, LOCAL_FILE)
         keys = get_s3_keys(BUCKET_NAME)
-        keys = keys[:1]
+        keys = keys[:5]
         for key in keys:
             file, ext = os.path.splitext(key)
             local_obj_file = TMP_DIR + key
