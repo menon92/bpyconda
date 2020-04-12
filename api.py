@@ -27,11 +27,17 @@ def home():
 def upload():
     if request.method == "POST":
         s3 = boto3.resource('s3')
-        # print(request.form.get("file_name"))
+        
         f = request.files['file']
+        file_name = f.filename
+        local_obj_file = TMP_DIR + f.filename
+        s3.Bucket(BUCKET_NAME).put_object(Key = file_name, Body= request.files['file'])
+        s3.Bucket(BUCKET_NAME).download_file(file_name, local_obj_file)
+        # print(request.form.get("file_name"))
+        # f = request.files['file']
     
-        file_name = upload_file(f"{f.filename}", BUCKET_NAME)
-        print(file_name)
+        # upload_file(f"{f.filename}", BUCKET_NAME)
+        # # print(file_name)
         return 'Done'
         
 
